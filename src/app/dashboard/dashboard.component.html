@@ -1,0 +1,14 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-xl-3" *ngFor="let auth of finalAuthInfo">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20" style="margin-bottom: 6.5rem;">{{auth.bookName}}<mat-icon style="float:right"> info </mat-icon></h6>
+                    <p class="m-b-0"><span class="f-right">{{auth.authName}}</span></p>
+                </div>
+            </div>
+            <h6 class="m-b-20" style="margin-bottom: 6.5rem;">{{auth.priceInfo}}<p style="float:right"> {{auth.ratingsInfo}} </p></h6>
+        </div>
+	</div>
+</div>

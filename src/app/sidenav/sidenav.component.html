@@ -1,0 +1,48 @@
+<mat-nav-list>
+    <h2 matSubheader class="mt-2">FILTER By</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="example-form">
+      <p>Name:</p>
+      <mat-form-field class="complete-width">
+        <input matInput placeholder="Name" value="Sushi"
+         matInput name="name" formControlName="name">
+      </mat-form-field>
+  
+      <p>Date:</p>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="From Date" type="text" formControlName="start">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+     </mat-form-field>
+  
+     <mat-form-field>
+      <input matInput [matDatepicker]="picker2" placeholder="To Date" type="text" formControlName="end">
+       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+       <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+  
+      <p>Price:</p>
+      <mat-form-field class="complete-width">
+        <input matInput placeholder="Price" value="0" type="number"
+         matInput name="price" formControlName="price">
+      </mat-form-field>
+  
+      <p>Ratings:</p>
+      <mat-form-field>
+        <mat-label>Your Ratings</mat-label>
+        <mat-select formControlName="teams">
+          <mat-option *ngFor="let team of teams" [value]="team.name">
+            {{team.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      
+      <p>Availability:</p>
+      <mat-radio-group formControlName="options">
+        <mat-radio-button value="1">Yes</mat-radio-button>
+        <mat-radio-button  value="2">No</mat-radio-button>
+      </mat-radio-group>
+    
+    </form>
+  </mat-nav-list>
+  
